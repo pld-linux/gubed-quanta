@@ -1,14 +1,7 @@
-# FIXME description and desc, the contents of this package are php
-# scripts which act as client for debugging and quanta itself is
-# debugging server. here's nice howto
-# http://www.very-clever.com/quanta-gubed-debugging.php
-# check does the script and server need to reach each other files
-# locally? then could call the pacakge remote debugger.
-
 Summary:	Gubed PHP Debugger: Quanta Support
 Name:		gubed-quanta
 Version:	3.4
-Release:	0.4
+Release:	0.5
 Epoch:		0
 License:	GPL
 Group:		Applications
@@ -58,6 +51,7 @@ cat >> $RPM_BUILD_ROOT%{_sysconfdir}/apache-%{name}.conf <<EOF
         allow from 127.0.0.1
     </IfModule>
 </Directory>
+# vim: filetype=apache ts=4 sw=4 et
 EOF
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/localsettings.php
