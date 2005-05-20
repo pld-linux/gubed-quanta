@@ -1,4 +1,5 @@
-Summary:	Gubed PHP Debugger: Quanta Support
+Summary:	Gubed PHP Debugger: Quanta support
+Summary(pl):	Gubed PHP Debugger - wsparcie dla Quanty
 Name:		gubed-quanta
 Version:	3.4
 Release:	0.5
@@ -9,8 +10,8 @@ Source0:	http://dl.sourceforge.net/gubed/GubedQuanta%(echo %{version} | tr . _).
 # Source0-md5:	1cca80dc0f47602231f4d2b91a8d296a
 Source1:	%{name}-localsettings.php
 URL:		http://gubed.mccabe.nu/
-Requires:	php >= 3:4.3.0
 BuildRequires:	sed >= 4.0
+Requires:	php >= 3:4.3.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -25,6 +26,14 @@ server software or scripts being debugged.
 
 This package contains support for Quanta.
 
+%description -l pl
+Gubed PHP Debugger to program do odpluskwiania skryptów PHP. Aktualnie
+obs³uguje krokowe wykonywanie kodu, ¶ledzenie zawarto¶ci zmiennych i
+ustawianie pu³apek (w danej linii lub warunkowych). Nie wymaga zmian w
+oprogramowaniu serwera ani odpluskwianych skryptach.
+
+Ten pakiet zawiera wsparcie dla Quanty.
+
 %prep
 %setup -q -n GubedQuanta%(echo %{version} | tr . _)
 sed Gubed/GubedGlobals.php -i -e \
@@ -34,7 +43,6 @@ rm -f docs/license.txt # Pure GPL
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT{%{_appdir},%{_sysconfdir}}
 
 cd Gubed
