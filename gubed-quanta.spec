@@ -6,7 +6,8 @@ Release:	0.5
 Epoch:		0
 License:	GPL
 Group:		Applications
-Source0:	http://dl.sourceforge.net/gubed/GubedQuanta%(echo %{version} | tr . _).tar.gz
+%define		_shver %(echo %{version} | tr . _)
+Source0:	http://dl.sourceforge.net/gubed/GubedQuanta%{_shver}.tar.gz
 # Source0-md5:	1cca80dc0f47602231f4d2b91a8d296a
 Source1:	%{name}-localsettings.php
 URL:		http://gubed.mccabe.nu/
@@ -35,7 +36,7 @@ oprogramowaniu serwera ani odpluskwianych skryptach.
 Ten pakiet zawiera wsparcie dla Quanty.
 
 %prep
-%setup -q -n GubedQuanta%(echo %{version} | tr . _)
+%setup -q -n GubedQuanta%{_shver}
 sed Gubed/GubedGlobals.php -i -e \
 	"s,dirname(__FILE__).'/localsettings.php','%{_sysconfdir}/localsettings.php',g"
 
