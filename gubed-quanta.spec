@@ -2,7 +2,7 @@ Summary:	Gubed PHP Debugger: Quanta support
 Summary(pl):	Gubed PHP Debugger - wsparcie dla Quanty
 Name:		gubed-quanta
 Version:	3.4
-Release:	0.5
+Release:	0.9
 Epoch:		0
 License:	GPL
 Group:		Applications
@@ -10,6 +10,7 @@ Group:		Applications
 Source0:	http://dl.sourceforge.net/gubed/GubedQuanta%{_shver}.tar.gz
 # Source0-md5:	1cca80dc0f47602231f4d2b91a8d296a
 Source1:	%{name}-localsettings.php
+Patch0:		%{name}-basename.patch
 URL:		http://gubed.mccabe.nu/
 BuildRequires:	sed >= 4.0
 Requires:	php >= 3:4.3.0
@@ -39,6 +40,7 @@ Ten pakiet zawiera wsparcie dla Quanty.
 %setup -q -n GubedQuanta%{_shver}
 sed Gubed/GubedGlobals.php -i -e \
 	"s,dirname(__FILE__).'/localsettings.php','%{_sysconfdir}/localsettings.php',g"
+%patch0 -p1
 
 rm -f docs/license.txt # Pure GPL
 
