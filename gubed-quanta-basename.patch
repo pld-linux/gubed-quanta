@@ -1,0 +1,12 @@
+--- ./Gubed/StartSession.php~	2005-03-09 22:33:31.000000000 +0200
++++ ./Gubed/StartSession.php	2005-08-18 14:27:21.000000000 +0300
+@@ -32,7 +32,8 @@
+          if(strtolower(substr($GLOBALS['gbd']['Script'], 7, strlen($_SERVER['SERVER_NAME']))) == strtolower($_SERVER['SERVER_NAME']))
+             $GLOBALS['gbd']['Script'] = substr($GLOBALS['gbd']['Script'], strlen($_SERVER['SERVER_NAME']) + 7);
+ 
+-         $gbdBase = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
++		 // SCRIPT_NAME here with apache-1.3.33/php-4.4.0 is with path component, use basename() to get rid of it
++         $gbdBase = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen(basename($_SERVER['SCRIPT_NAME'])));
+       
+          $GLOBALS['gbd']['SessionFile'] = $_SERVER['SCRIPT_NAME'] . '?' . $_SERVER['QUERY_STRING'];//$_SERVER['REQUEST_URI'];
+          $GLOBALS['gbd']['SessionFile'] = substr($GLOBALS['gbd']['SessionFile'], 0,  strpos($GLOBALS['gbd']['SessionFile'], '?'));
