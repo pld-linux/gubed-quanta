@@ -1,19 +1,19 @@
+%define		_shver %(echo %{version} | tr . _)
 Summary:	Gubed PHP Debugger: Quanta support
 Summary(pl):	Gubed PHP Debugger - wsparcie dla Quanty
 Name:		gubed-quanta
 Version:	3.4
-Release:	0.9
+Release:	0.11
 Epoch:		0
 License:	GPL
 Group:		Applications
-%define		_shver %(echo %{version} | tr . _)
 Source0:	http://dl.sourceforge.net/gubed/GubedQuanta%{_shver}.tar.gz
 # Source0-md5:	1cca80dc0f47602231f4d2b91a8d296a
 Source1:	%{name}-localsettings.php
 Patch0:		%{name}-basename.patch
 URL:		http://gubed.mccabe.nu/
 BuildRequires:	sed >= 4.0
-Requires:	php >= 3:4.3.0
+Requires:	webserver(php) >= 4.3.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
