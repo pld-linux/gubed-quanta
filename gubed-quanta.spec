@@ -1,6 +1,6 @@
 %define		_shver %(echo %{version} | tr . _)
 Summary:	Gubed PHP Debugger: Quanta support
-Summary(pl):	Gubed PHP Debugger - wsparcie dla Quanty
+Summary(pl.UTF-8):   Gubed PHP Debugger - wsparcie dla Quanty
 Name:		gubed-quanta
 Version:	3.4
 Release:	0.11
@@ -28,10 +28,10 @@ server software or scripts being debugged.
 
 This package contains support for Quanta.
 
-%description -l pl
-Gubed PHP Debugger to program do odpluskwiania skryptÛw PHP. Aktualnie
-obs≥uguje krokowe wykonywanie kodu, ∂ledzenie zawarto∂ci zmiennych i
-ustawianie pu≥apek (w danej linii lub warunkowych). Nie wymaga zmian w
+%description -l pl.UTF-8
+Gubed PHP Debugger to program do odpluskwiania skrypt√≥w PHP. Aktualnie
+obs≈Çuguje krokowe wykonywanie kodu, ≈õledzenie zawarto≈õci zmiennych i
+ustawianie pu≈Çapek (w danej linii lub warunkowych). Nie wymaga zmian w
 oprogramowaniu serwera ani odpluskwianych skryptach.
 
 Ten pakiet zawiera wsparcie dla Quanty.
