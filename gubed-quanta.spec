@@ -1,6 +1,6 @@
 %define		_shver %(echo %{version} | tr . _)
 Summary:	Gubed PHP Debugger: Quanta support
-Summary(pl.UTF-8):   Gubed PHP Debugger - wsparcie dla Quanty
+Summary(pl.UTF-8):	Gubed PHP Debugger - wsparcie dla Quanty
 Name:		gubed-quanta
 Version:	3.4
 Release:	0.11
