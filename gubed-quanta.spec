@@ -13,6 +13,7 @@ Source1:	%{name}-localsettings.php
 Patch0:		%{name}-basename.patch
 URL:		http://gubed.mccabe.nu/
 BuildRequires:	sed >= 4.0
+BuildRequires:	migrate-to-webapps
 Requires:	webserver(php) >= 4.3.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
