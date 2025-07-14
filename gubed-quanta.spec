@@ -41,7 +41,7 @@ Ten pakiet zawiera wsparcie dla Quanty.
 %setup -q -n GubedQuanta%{_shver}
 sed Gubed/GubedGlobals.php -i -e \
 	"s,dirname(__FILE__).'/localsettings.php','%{_sysconfdir}/localsettings.php',g"
-%patch0 -p1
+%patch -P0 -p1
 
 rm -f docs/license.txt # Pure GPL
 
